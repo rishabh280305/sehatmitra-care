@@ -47,13 +47,16 @@ export function AppointmentDemo() {
     if (sent > 0) { setMessage(`${sent} offline request${sent===1?"":"s"} synchronized.`); await load(); }
   }, [load, refreshPending]);
 
-  useEffect(() => { load().catch(() => { setAuthenticated(false); setMessage("The care workspace is temporarily unavailable."); }); }, [load]);
   useEffect(() => {
-    void refreshPending();
+    const task = window.setTimeout(() => { void load().catch(() => { setAuthenticated(false); setMessage("The care workspace is temporarily unavailable."); }); }, 0);
+    return () => window.clearTimeout(task);
+  }, [load]);
+  useEffect(() => {
+    const task = window.setTimeout(() => { void refreshPending(); }, 0);
     const handleOnline = () => { setOnline(true); void syncPending(); };
     const handleOffline = () => setOnline(false);
     window.addEventListener("online", handleOnline); window.addEventListener("offline", handleOffline);
-    return () => { window.removeEventListener("online", handleOnline); window.removeEventListener("offline", handleOffline); };
+    return () => { window.clearTimeout(task); window.removeEventListener("online", handleOnline); window.removeEventListener("offline", handleOffline); };
   }, [refreshPending, syncPending]);
 
   async function enterWorkspace() {
