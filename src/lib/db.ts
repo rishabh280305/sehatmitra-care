@@ -21,6 +21,10 @@ export async function database() {
       status text NOT NULL DEFAULT 'requested' CHECK (status IN ('requested', 'confirmed', 'cancelled')),
       created_at timestamptz NOT NULL DEFAULT now()
     )`;
+    await sql`ALTER TABLE sehatmitra.appointment_requests ADD COLUMN IF NOT EXISTS idempotency_key text`;
+    await sql`CREATE UNIQUE INDEX IF NOT EXISTS appointment_requests_idempotency
+      ON sehatmitra.appointment_requests (user_id, idempotency_key)
+      WHERE idempotency_key IS NOT NULL`;
   })();
   await initialized;
   return sql;
