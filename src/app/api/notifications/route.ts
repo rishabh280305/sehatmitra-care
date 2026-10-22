@@ -1,0 +1,2 @@
+import {database} from "@/lib/db";import {getDemoSession} from "@/lib/session";
+export async function GET(){const session=await getDemoSession();if(!session)return Response.json({error:"Authentication required."},{status:401});const sql=await database();const notifications=await sql`SELECT id,message,read_at,created_at FROM sehatmitra.notifications WHERE user_id=${session.userId} ORDER BY created_at DESC LIMIT 50`;return Response.json({notifications});}

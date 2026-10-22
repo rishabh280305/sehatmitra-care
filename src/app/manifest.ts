@@ -1,0 +1,1 @@
+import type {MetadataRoute} from "next";export default function manifest():MetadataRoute.Manifest{return{name:"SehatMitra Care",short_name:"SehatMitra",description:"Offline-first synthetic healthcare coordination demo",start_url:"/",display:"standalone",background_color:"#f3fbf8",theme_color:"#087d65",icons:[]}}

@@ -1,12 +1,14 @@
 import { AppointmentDemo } from "@/components/appointment-demo";
+import { CareOperations } from "@/components/care-operations";
 
 const roles = [{icon:"●",name:"Patients",text:"Appointments and follow-ups"},{icon:"✦",name:"ASHA workers",text:"Offline visits and referrals"},{icon:"+",name:"Doctors",text:"Authorized care context"},{icon:"▦",name:"Hospitals",text:"Queues and capacity"}];
 export default function Home() {
   return <main className="min-h-screen bg-[#f3fbf8] text-[#173b35]">
-    <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6"><div className="text-2xl font-extrabold tracking-tight"><span className="text-[#0a9b7a]">सेहत</span>मित्र</div><span className="rounded-full bg-[#ffe7b7] px-3 py-2 text-xs font-bold text-[#76500a]">Development in progress</span></nav>
+    <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6"><div className="text-2xl font-extrabold tracking-tight"><span className="text-[#0a9b7a]">सेहत</span>मित्र</div><span className="rounded-full bg-[#e1f8ef] px-3 py-2 text-xs font-bold text-[#087d65]">OFFLINE-READY DEMO</span></nav>
     <section className="mx-auto grid max-w-6xl gap-12 px-5 pb-16 pt-12 lg:grid-cols-[1fr_.85fr] lg:pt-24"><div><p className="mb-5 text-sm font-bold uppercase tracking-[.18em] text-[#0a9b7a]">Care that keeps working offline</p><h1 className="text-5xl font-extrabold leading-[1.04] tracking-tight md:text-7xl">Every care journey, connected.</h1><p className="mt-7 max-w-xl text-lg leading-8 text-[#53716b]">A low-bandwidth healthcare coordination platform for patients, ASHA workers, doctors and hospital teams. Built with synthetic demonstration data only.</p><div className="mt-9 flex flex-wrap gap-3"><a href="/api/health" className="rounded-xl bg-[#087d65] px-6 py-3 font-bold text-white shadow-lg shadow-emerald-900/10">Check platform health</a><span className="rounded-xl border border-[#badbd2] px-6 py-3 font-semibold">सुलभ • Accessible</span></div></div>
       <div className="rounded-[2rem] bg-white p-5 shadow-2xl shadow-emerald-900/10 ring-1 ring-emerald-900/5"><div className="mb-4 rounded-2xl bg-[#087d65] p-6 text-white"><p className="text-sm text-emerald-100">SehatMitra network</p><p className="mt-1 text-2xl font-bold">Four roles. One care plan.</p></div><div className="grid gap-3 sm:grid-cols-2">{roles.map(r=><div key={r.name} className="rounded-2xl bg-[#f4faf8] p-4"><div className="mb-5 text-2xl text-[#0a9b7a]">{r.icon}</div><h2 className="font-bold">{r.name}</h2><p className="mt-1 text-sm leading-5 text-[#6a827d]">{r.text}</p></div>)}</div><p className="mt-4 rounded-xl bg-[#fff8e8] p-3 text-xs leading-5 text-[#735c29]">Privacy note: this portfolio environment will never contain real patient records or make diagnostic claims.</p></div>
     </section>
     <AppointmentDemo />
+    <CareOperations />
   </main>;
 }
