@@ -4,3 +4,6 @@ export const canConfirmAppointment=(role:DemoRole)=>role==="doctor"||role==="adm
 export const canViewFieldVisits=(role:DemoRole)=>role!=="patient";
 export const canCreateFieldVisit=(role:DemoRole)=>role==="asha";
 export const canForecastStaffing=(role:DemoRole)=>role==="admin";
+export const canCreateProfile=(role:DemoRole)=>role==="patient"||role==="asha";
+export const canManageCapacity=(role:DemoRole)=>role==="admin";
+export const canViewAudit=(role:DemoRole)=>role==="admin";

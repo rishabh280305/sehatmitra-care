@@ -1,5 +1,6 @@
 import { AppointmentDemo } from "@/components/appointment-demo";
 import { CareOperations } from "@/components/care-operations";
+import { CareRecords } from "@/components/care-records";
 
 const roles = [{icon:"●",name:"Patients",text:"Appointments and follow-ups"},{icon:"✦",name:"ASHA workers",text:"Offline visits and referrals"},{icon:"+",name:"Doctors",text:"Authorized care context"},{icon:"▦",name:"Hospitals",text:"Queues and capacity"}];
 export default function Home() {
@@ -10,5 +11,6 @@ export default function Home() {
     </section>
     <AppointmentDemo />
     <CareOperations />
+    <CareRecords />
   </main>;
 }

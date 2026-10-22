@@ -8,6 +8,9 @@
 | GET/POST | `/api/visits` | ASHA/doctor/admin | Read authorized field notes; only ASHA can create them |
 | GET | `/api/forecast` | Admin | Reproducible synthetic-demand staffing baseline and holdout MAE |
 | GET | `/api/notifications` | Demo session | Owner-filtered in-app appointment notifications |
+| GET/POST | `/api/profiles` | Role-scoped | Read or upsert synthetic coarse patient profiles |
+| GET/POST | `/api/capacity` | Any read; admin writes | Dated ASHA/doctor/nurse slot capacity |
+| GET | `/api/audit` | Admin | Recent appointment, visit, profile, and capacity audit events |
 
 Clients should send a version-4 UUID in `Idempotency-Key`. Replaying the same key returns the existing row. Appointment times must be future ISO timestamps. Real names, diagnoses, phone numbers, or records are prohibited.
 

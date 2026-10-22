@@ -11,6 +11,8 @@ SehatMitra is an offline-first healthcare coordination portfolio application. It
 - Signed patient, ASHA, doctor, and administrator demo roles with server-tested permission boundaries
 - Appointment confirmation/cancellation/rescheduling API, audit events, and in-app notification records
 - ASHA field visits and referrals, doctor/admin authorized context, and a transparent synthetic-demand staffing forecast with held-out MAE
+- Synthetic patient profiles with broad age bands, multilingual preference, explicit sharing choice, and role-scoped visibility
+- Admin-managed dated staff capacity plus an administrator-only audit feed
 - Installable service-worker app shell plus browser voice-input and read-aloud fallbacks
 - Mobile-first accessible interface, unit-tested sync policy, cloud CI, and production Playwright flow
 
